@@ -1,0 +1,95 @@
+.container {
+    max-width: 120rem ; //container can decreese if theres not enough space to display the width
+    margin: 8rem auto;
+    background-color: var(--color-grey-light-2);
+    box-shadow: var(--shadow-dark); //x direction, y direction, blur, color of the blur
+
+    min-height: 50rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.header {
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--line);
+
+    display: flex; //puts the elements side by side
+    justify-content: space-between; //space between the elements in the header
+    align-items: center; //centers them top to bottom
+
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap; //allowing flex items to wrap in the new line if they dont have enough space in their container
+        height: 11rem;
+        align-content: space-around;
+    }
+}
+
+.content {
+    display: flex; // starts up the flexbox
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
+}
+
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+
+    flex: 0 0 18%; // flexgrow, flexshrink, flexbasis. Makes the navigation bar take up to 18%. if it shrinks it will always take up the 18% of the flex container
+
+    display: flex;
+    flex-direction: column; //changed the main axis direction to top to bottom
+    justify-content: space-between; //pushes the legal all the way down
+}
+
+.hotel-view {
+    background-color: #fff;
+    flex: 1; //the element should grow as much as it can. it will take all the remaining space of the container. the rest of the 18% of the navigation
+}
+
+.detail {
+    font-size: 1.4rem;
+    display: flex;
+    padding: 4.5rem ;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
+}
+
+.description {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    flex: 0 0 60%; //takes the 60% of the .detail container. (parent container)
+    margin-right: 4.5rem;
+    padding: 3rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.user-reviews {
+    flex:1; //occupies the remaining space
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
